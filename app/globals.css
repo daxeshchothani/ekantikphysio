@@ -1,26 +1,51 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html,
+body {
+  min-height: 100%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-surface text-dark font-sans antialiased;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-display;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+button {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
